@@ -35,6 +35,9 @@ class Ordering:
                 best_objective = new_objective
                 best_swap = (i, j)        
         return best_swap
+    """
+    To optimize, see if there's a swap we can perform that improves the objective function.
+    """
     def optimize(self):
         keep_going = True
         while keep_going:
@@ -80,7 +83,10 @@ def create_knapsack_problem(num_items, target_rho, verbose):
     return ks
 
 results = create_knapsack_problem(args.NumItems, args.SpearmanCorr, args.verbose)
+print(args.NumItems)
+i = 1
 for value, weight in results:
-    print('\t' + str(value) + '\t' + str(weight))
+    print('\t' + str(i) + '\t' +  str(value) + '\t' + str(weight))
+    i += 1
 
 
