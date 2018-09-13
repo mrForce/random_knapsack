@@ -83,10 +83,16 @@ def create_knapsack_problem(num_items, target_rho, verbose):
     return ks
 
 results = create_knapsack_problem(args.NumItems, args.SpearmanCorr, args.verbose)
+
+
 print(args.NumItems)
 i = 1
+total_weight = 0
 for value, weight in results:
     print('\t' + str(i) + '\t' +  str(value) + '\t' + str(weight))
     i += 1
+    total_weight += weight
+
+print(int(random.uniform(0.001, 0.4)*total_weight))
 
 
